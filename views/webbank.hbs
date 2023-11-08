@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bank Of The Poor</title>
+		<base href="/">
+		<link rel="stylesheet" href="/views/bank.css">
+	</head>
+	<body>
+		<div class="spacer"></div>
+		<div class="bankWrapper">
+			<a href="/" id="loggedUser" title="Click me to logout!" class="rightFloat">hello {{ username }}</a>
+			<img src="/views/logo2.jpg" id="bankLogo">
+			<div id="bankActions">
+				<form action="/bankActions" id="formBankActions" method="POST">
+					<input type="text" placeholder="account number" class="rightFloat marginDown" name="txtAccountNumber" id="txtAccountNumber">
+					<input type="hidden" name="txtAccountName" id="txtAccountName" value={{ username  }}>
+					<div>
+						<label class="rightFloat" for="radioBalance">Balance</label>
+						<input type="radio" value="Balance" class="rightFloat marginDown" name="radioBalance" id="radioBalance">
+					</div>
+					<div>
+						<label class="rightFloat" for="radioDeposit">Deposit</label>
+						<input type="radio" value="Deposit" class="rightFloat marginDown" id="radioDeposit" name="radioDeposit">
+					</div>
+					<div>
+						<label class="rightFloat" for="radioOpenAccount">Open an Account</label>
+						<input type="radio" value="Deposit" class="rightFloat marginDown" id="radioOpenAccount" name="radioOpenAccount">
+					</div>
+					<div>
+						<label class="rightFloat" for="radioWithdrawal">Withdrawal</label>
+						<input type="radio" value="Deposit" class="rightFloat marginDown" id="radioWithdrawal" name="radioWithdrawal">
+					</div>
+					<input type="submit" value="Submit" class="rightFloat" id="btnSubmitBank">
+				</form>
+			</div>
+			<span id="bankActionsStatus">{{ baStatus }}</span>
+		</div>
+	</body>
+</html>
